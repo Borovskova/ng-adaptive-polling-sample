@@ -1,0 +1,11 @@
+<div class="login-page">
+    <button
+        *ngIf="!(oktaAuthenticationService.authState | async)?.isAuthenticated; else loggedIn"
+        (click)="signIn()"
+        class="login-page__btn"
+        >Login</button
+    >
+    <ng-template #loggedIn>
+        <p>You are logged in already</p>
+    </ng-template>
+</div>

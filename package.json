@@ -6,7 +6,12 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "format-ts": "prettier --write \"src/**/*.ts\" --config \".prettierrc-ts.json\"",
+    "format-scss": "prettier --write \"src/**/*.scss\" --config \".prettierrc-scss.json\"",
+    "format-html": "prettier --write \"src/**/*.html\" --config \".prettierrc-html.json\"",
+    "format-json": "prettier --write \"src/**/*.json\" --config \".prettierrc-json.json\"",
+    "format": "npm run format-ts && npm run format-scss && npm run format-html && npm run format-json"
   },
   "private": true,
   "dependencies": {
@@ -16,6 +21,8 @@
     "@angular/forms": "^20.0.0",
     "@angular/platform-browser": "^20.0.0",
     "@angular/router": "^20.0.0",
+    "@okta/okta-angular": "^6.5.1",
+    "prettier": "^3.5.3",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0"
   },

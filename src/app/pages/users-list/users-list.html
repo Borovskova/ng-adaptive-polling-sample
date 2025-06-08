@@ -1,0 +1,3 @@
+<ul class="users">
+    <li class="users__item" *ngFor="let user of (httpService.usersData | async)">{{user.name}}</li>
+</ul>

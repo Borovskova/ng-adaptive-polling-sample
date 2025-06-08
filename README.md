@@ -1,59 +1,47 @@
-# NgOktaAuthSample
+# ng-okta-auth-sample
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.1.
+A **basic sample project** demonstrating Okta authentication integration with Angular (version 20+) using the `@okta/okta-angular` library.
 
-## Development server
+It covers fundamental flows like login, logout, protecting routes, retrieving user information, and **making authenticated API calls**.
 
-To start a local development server, run:
+## Features
 
-```bash
-ng serve
-```
+*   Okta login (Redirect flow)
+*   Okta logout
+*   Protecting Angular routes using `AuthGuard`
+*   Retrieving authenticated user information
+*   Making authenticated API calls with the access token via HTTP Interceptor
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Prerequisites
 
-## Code scaffolding
+*   Node.js (LTS version recommended)
+*   Angular CLI (install globally: `npm install -g @angular/cli`)
+*   An Okta Developer Account (sign up at [https://developer.okta.com/signup](https://developer.okta.com/signup))
+*   An Okta **Web Application** configured:
+    *   Login redirect URI: `http://localhost:4200/login/callback`
+    *   Logout redirect URI: `http://localhost:4200`
+    *   Grant Type: Authorization Code (PKCE)
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Setup
 
-```bash
-ng generate component component-name
-```
+1.  Clone the repository:
+    ```bash
+    git clone https://github.com/Borovskova/ng-okta-auth-sample.git
+    ```
+2.  Install dependencies:
+    ```bash
+    npm install
+    ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Running the Project
 
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+Run the Angular development server:
 
 ```bash
-ng test
-```
+ng serve -o
 
-## Running end-to-end tests
+How it Works (Key Concepts)
 
-For end-to-end (e2e) testing, run:
+@okta/okta-angular: Provides the core services and components for Angular integration.
 
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+OktaAuthStateService: An observable service that provides real-time information about the user's authentication state (e.g., isAuthenticated$, authState$).
