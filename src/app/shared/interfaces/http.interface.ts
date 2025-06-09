@@ -1,4 +1,4 @@
-export interface IResponse{
-    data:Array<any>;
-    status:string;
+export interface IResponse {
+  data: Array<any>;
+  status: string;
 }
