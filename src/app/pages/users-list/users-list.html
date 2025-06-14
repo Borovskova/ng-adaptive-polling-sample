@@ -1,3 +1,9 @@
-<ul class="users">
-    <li class="users__item" *ngFor="let user of (usersList$ | async)">{{user.name}}</li>
+<div *ngIf="usersList$ | async as users" class="users">
+<ul class="users__list">
+    <li class="users__item" *ngFor="let user of users">
+        <span class="users__name">{{user.name}}</span>
+        <button *ngIf="users.length" (click)="generatePurchasesHistory(user.id)" class="users__generate-history-btn">Generate purchases history report</button>
+    </li>
+    <hr>
 </ul>
+</div>

@@ -1,47 +1,24 @@
-# ng-okta-auth-sample
+# ng-adaptive-polling-sample
 
-A **basic sample project** demonstrating Okta authentication integration with Angular (version 20+) using the `@okta/okta-angular` library.
+This Angular sample project demonstrates how to implement **adaptive HTTP polling** in a clean, efficient, and reactive way.
 
-It covers fundamental flows like login, logout, protecting routes, retrieving user information, and **making authenticated API calls**.
+## 🚀 Main Features
 
-## Features
+- 📡 **Adaptive Polling Strategy**: Dynamically adjusts polling frequency based on HTTP response content, timing, or other conditions.
+- ♻️ **RxJS-based Implementation**: Built using RxJS operators to handle timing, retries, backoff, and error management.
+- 🔒 **Okta Authentication (Optional)**: Includes Okta integration for authenticated access, though it's not the core focus.
 
-*   Okta login (Redirect flow)
-*   Okta logout
-*   Protecting Angular routes using `AuthGuard`
-*   Retrieving authenticated user information
-*   Making authenticated API calls with the access token via HTTP Interceptor
+## 🧠 Learnings
 
-## Prerequisites
+This project is primarily intended to **educate developers** on:
 
-*   Node.js (LTS version recommended)
-*   Angular CLI (install globally: `npm install -g @angular/cli`)
-*   An Okta Developer Account (sign up at [https://developer.okta.com/signup](https://developer.okta.com/signup))
-*   An Okta **Web Application** configured:
-    *   Login redirect URI: `http://localhost:4200/login/callback`
-    *   Logout redirect URI: `http://localhost:4200`
-    *   Grant Type: Authorization Code (PKCE)
+- Setting up a polling mechanism using `catchError`, `defer`, `expand`, `filter`, `map`, `of`, `switchMap`, `throwError` and `timer`.
+- Implementing **adaptive logic** (e.g., exponential backoff, conditional delay) based on server signals.
+- Ensuring cleanup on component destroy and route changes to prevent memory leaks.
 
-## Setup
-
-1.  Clone the repository:
-    ```bash
-    git clone https://github.com/Borovskova/ng-okta-auth-sample.git
-    ```
-2.  Install dependencies:
-    ```bash
-    npm install
-    ```
-
-## Running the Project
-
-Run the Angular development server:
+## 🛠️ Setup
 
 ```bash
-ng serve -o
-
-How it Works (Key Concepts)
-
-@okta/okta-angular: Provides the core services and components for Angular integration.
-
-OktaAuthStateService: An observable service that provides real-time information about the user's authentication state (e.g., isAuthenticated$, authState$).
+git clone https://github.com/Borovskova/ng-adaptive-polling-sample.git
+npm install
+ng serve
